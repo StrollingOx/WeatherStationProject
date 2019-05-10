@@ -1,0 +1,6 @@
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\bin\Debug\Program.exe
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\bin\Debug\Program.pdb
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.csprojAssemblyReference.cache
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.exe
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.pdb
