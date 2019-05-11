@@ -2,6 +2,6 @@ namespace Program
 {
     public interface IHumidity
     {
-        double getHumidity();
+        double GetHumidity();
     }
 }

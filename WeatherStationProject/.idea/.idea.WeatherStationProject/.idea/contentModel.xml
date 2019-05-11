@@ -13,6 +13,7 @@
           <e p="ITemperature.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Program.csproj" t="IncludeRecursive" />
         <e p="Properties" t="Include">
@@ -24,6 +25,7 @@
           <e p="Sensor.cs" t="Include" />
           <e p="TemperatureSensor.cs" t="Include" />
         </e>
+        <e p="WeatherStation.cs" t="Include" />
       </e>
       <e p="WeatherStationProject.sln" t="IncludeFlat" />
     </e>

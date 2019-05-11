@@ -4,3 +4,6 @@ C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Pr
 C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.csproj.CoreCompileInputs.cache
 C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.exe
 C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.pdb
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject\Program\obj\Debug\Program.csproj.CopyComplete

@@ -1,10 +1,14 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace Program
 {
+    [DataContract]
     public class TemperatureSensor: Sensor, ITemperature
     {
-        private string _scale = "";
+        [DataMember(Name="Scale")]
+        private string _scale = ""; //0 = Celsius; 1 = Fahrenheit
+        [DataMember(Name="Degrees")]
         private double _temperature = 0.0d;
 
         public TemperatureSensor()
@@ -14,24 +18,24 @@ namespace Program
 
         public TemperatureSensor(int scale)
         {
-            setScale(scale);
+            SetScale(scale);
         }
         
-        public void setScale(int scale)
+        public void SetScale(int scale)
         {
             switch (scale)
             {
                 case 0:
                     if (_scale.Equals("Fahrenheit"))
                     {
-                        convertToCelsius();
+                        ConvertToCelsius();
                     }
                     _scale = "Celsius";
                     break;
                 case 1: 
                     if (_scale.Equals("Celsius"))
                     {
-                        convertToFahrenheit();
+                        ConvertToFahrenheit();
                     }
                     _scale = "Fahrenheit";
                     break;
@@ -41,22 +45,27 @@ namespace Program
         
         }
 
-        private void convertToCelsius()
+        private void ConvertToCelsius()
         {
             _temperature = (_temperature - 32) * 5.0 / 9.0;
         }
         
-        private void convertToFahrenheit()
+        private void ConvertToFahrenheit()
         {
             _temperature = (_temperature * 9.0 / 5.0) + 32;
         }
 
-        public string getScaleName()
+        public string GetScaleName()
         {
             return _scale;
         }
 
-        public double getTemperature()
+        public string GetScaleSymbol()
+        {
+            return "°" + _scale.Substring(0, 1);
+        }
+
+        public double GetTemperature()
         {
             return _temperature;
         }

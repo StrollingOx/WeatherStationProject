@@ -2,8 +2,9 @@ namespace Program
 {
     public interface ITemperature
     {
-        void setScale(int scale);
-        string getScaleName();
-        double getTemperature();
+        void SetScale(int scale);
+        string GetScaleName();
+        string GetScaleSymbol();
+        double GetTemperature();
     }
 }

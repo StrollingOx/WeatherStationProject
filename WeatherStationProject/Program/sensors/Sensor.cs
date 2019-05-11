@@ -1,15 +1,26 @@
 using System;
+using System.Runtime.Serialization;
 using System.Security.AccessControl;
 
 namespace Program
 {
+    [DataContract]
     public class Sensor :IDisposable
     {
         private string _name;
 
+        [DataMember(Name="Sensor's Name")]
         public string Name
         {
-            get { return _name; }
+            get => _name;
+            set
+            {
+                if (value.Length > 16)
+                    throw new NameOutOfScopeException();
+                else
+                    _name = value;
+                
+            }
         }
         
         private static int _number = 0;
@@ -28,14 +39,8 @@ namespace Program
 
         public Sensor(string name)
         {
-            if (name.Length > 16)
-                throw new NameOutOfScopeException();
-            else
-            {
-                _name = name;
-                _number++;
-            }
-
+            _number++;
+            Name = name;
         }
 
         public void Dispose()
