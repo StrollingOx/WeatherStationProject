@@ -69,6 +69,11 @@ namespace Program
         {
             return _temperature;
         }
+
+        public override string ToString()
+        {
+            return Name + ": " + GetTemperature() + GetScaleSymbol();
+        }
     }
 
     public class WrongScaleException : Exception
