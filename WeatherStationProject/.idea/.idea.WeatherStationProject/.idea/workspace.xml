@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="908894bc-8033-4354-9481-f6f28cc3794b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStationProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStationProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WeatherStationProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WeatherStationProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/Program.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Program/Program.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program/WeatherStation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/WeatherStation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/bin/Debug/Program.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Program/bin/Debug/Program.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/bin/Debug/Program.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Program/bin/Debug/Program.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/interfaces/IHumidity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/interfaces/IHumidity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/interfaces/IPressure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/interfaces/IPressure.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/interfaces/ITemperature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/interfaces/ITemperature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/obj/Debug/Program.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Program/obj/Debug/Program.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/obj/Debug/Program.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Program/obj/Debug/Program.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/obj/Debug/Program.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Program/obj/Debug/Program.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/obj/Debug/Program.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Program/obj/Debug/Program.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/obj/Debug/Program.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Program/obj/Debug/Program.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/sensors/HumiditySensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/sensors/HumiditySensor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/sensors/PressureSensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/sensors/PressureSensor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program/sensors/Sensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/sensors/Sensor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,67 +22,67 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58527374">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Program/Program.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="645">
-                  <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-                  <folding>
-                    <marker date="1557604552792" expanded="true" signature="6:95" ph="..." />
-                    <marker date="1557604552792" expanded="true" signature="115:2204" ph="{...}" />
-                    <marker date="1557604552792" expanded="true" signature="144:2202" ph="{...}" />
-                    <marker date="1557604552792" expanded="true" signature="206:1360" ph="{...}" />
-                    <marker date="1557604552792" expanded="true" signature="967:1349" ph="/* var serializer = new DataContractSerializer(station.GetType()); ... */" />
-                    <marker date="1557604552792" expanded="true" signature="1428:2196" ph="{...}" />
-                    <marker date="1557604552792" expanded="true" signature="2118:2186" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Program/WeatherStation.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-                  <folding>
-                    <marker date="1557597629806" expanded="false" signature="6:102" ph="..." />
-                    <marker date="1557597629806" expanded="true" signature="121:1234" ph="{...}" />
-                    <marker date="1557597629806" expanded="true" signature="298:1232" ph="{...}" />
-                    <marker date="1557597629806" expanded="true" signature="523:577" ph="{...}" />
-                    <marker date="1557597629806" expanded="true" signature="619:1226" ph="{...}" />
-                    <marker date="1557597629806" expanded="true" signature="777:1168" ph="{...}" />
-                    <marker date="1557597629806" expanded="true" signature="835:1137" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Program/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
+              <folding>
+                <marker date="1557906867937" expanded="true" signature="6:126" ph="..." />
+                <marker date="1557906867937" expanded="true" signature="146:3642" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="175:3640" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="329:1406" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="352:391" ph="/* TODO: Add descriptions ... */" />
+                <marker date="1557906867937" expanded="true" signature="672:754" ph="{...}" />
+                <marker date="1557906867937" expanded="false" signature="1466:1663" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="1739:1925" ph="{...}" />
+                <marker date="1557906867937" expanded="false" signature="1971:2784" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="2829:3634" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="3569:3624" ph="{...}" />
+                <marker date="1557906867937" expanded="true" signature="3674:4059" ph="/* var serializer = new DataContractSerializer(station.GetType()); ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program/WeatherStation.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+              <folding>
+                <marker date="1557906867944" expanded="false" signature="6:121" ph="..." />
+                <marker date="1557906867944" expanded="true" signature="140:1685" ph="{...}" />
+                <marker date="1557906867944" expanded="true" signature="317:1683" ph="{...}" />
+                <marker date="1557906867944" expanded="true" signature="533:587" ph="{...}" />
+                <marker date="1557906867944" expanded="false" signature="628:1235" ph="{...}" />
+                <marker date="1557906867944" expanded="true" signature="786:1177" ph="{...}" />
+                <marker date="1557906867944" expanded="true" signature="844:1146" ph="{...}" />
+                <marker date="1557906867944" expanded="true" signature="1309:1443" ph="{...}" />
+                <marker date="1557906867944" expanded="true" signature="1549:1677" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Program/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program/WeatherStation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program/sensors/PressureSensor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/sensors/Sensor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/sensors/HumiditySensor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program/interfaces/ITemperature.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/interfaces/IHumidity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/interfaces/IPressure.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F5F8D912-CD82-4E63-93D1-35A9356AD96C/74/8809ab81/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program/interfaces/ITemperature.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program/sensors/PressureSensor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program/WeatherStation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -101,18 +97,18 @@
         <option value="$PROJECT_DIR$/Program/interfaces/ITemperature.cs" />
         <option value="$PROJECT_DIR$/Program/interfaces/IPressure.cs" />
         <option value="$PROJECT_DIR$/Program/interfaces/IHumidity.cs" />
-        <option value="$PROJECT_DIR$/Program/WeatherStation.cs" />
         <option value="$PROJECT_DIR$/Program/sensors/Sensor.cs" />
-        <option value="$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs" />
         <option value="$PROJECT_DIR$/Program/sensors/HumiditySensor.cs" />
         <option value="$PROJECT_DIR$/Program/sensors/PressureSensor.cs" />
+        <option value="$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs" />
+        <option value="$PROJECT_DIR$/Program/WeatherStation.cs" />
         <option value="$PROJECT_DIR$/Program/Program.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="-7" />
+    <option name="width" value="1276" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -125,21 +121,33 @@
         <subPane>
           <expand>
             <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="WeatherStationProject" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="WeatherStationProject" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Program" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="WeatherStationProject" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Program" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="interfaces" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="WeatherStationProject" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Program" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="sensors" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -147,6 +155,7 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -191,11 +200,13 @@
       <option name="presentableId" value="Default" />
       <updated>1557488201877</updated>
       <workItem from="1557488204435" duration="11218000" />
+      <workItem from="1557888750903" duration="243000" />
+      <workItem from="1557889023872" duration="3447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29820000" />
+    <option name="totallyTimeSpent" value="33510000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,17 +218,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14498934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24506749" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989059" weight="0.23027718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -229,8 +239,8 @@
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" weight="0.32917964" />
-      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="15" weight="0.3271028" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5010941" side_tool="true" weight="0.24465811" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.3251599" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -273,7 +283,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -302,17 +312,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Program/Properties/ITemperature.cs" />
-    <entry file="file://$PROJECT_DIR$/Program/interfaces/ITemperature.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <marker date="1557516856657" expanded="true" signature="17:198" ph="{...}" />
-            <marker date="1557516856657" expanded="true" signature="53:196" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Program/interfaces/IHumidity.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -331,70 +330,6 @@
           <folding>
             <marker date="1557516865399" expanded="true" signature="17:94" ph="{...}" />
             <marker date="1557516865399" expanded="true" signature="50:92" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program/WeatherStation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding>
-            <marker date="1557597629806" expanded="false" signature="6:102" ph="..." />
-            <marker date="1557597629806" expanded="true" signature="121:1234" ph="{...}" />
-            <marker date="1557597629806" expanded="true" signature="298:1232" ph="{...}" />
-            <marker date="1557597629806" expanded="true" signature="523:577" ph="{...}" />
-            <marker date="1557597629806" expanded="true" signature="619:1226" ph="{...}" />
-            <marker date="1557597629806" expanded="true" signature="777:1168" ph="{...}" />
-            <marker date="1557597629806" expanded="true" signature="835:1137" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program/sensors/Sensor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-          <folding>
-            <marker date="1557598103183" expanded="false" signature="6:86" ph="..." />
-            <marker date="1557598103183" expanded="true" signature="105:1674" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="163:1392" ph="{...}" />
-            <marker date="1557598103183" expanded="false" signature="270:529" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="322:519" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="612:668" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="732:815" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="851:919" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="950:1036" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="1100:1296" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="1195:1250" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="1315:1386" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="1446:1672" ph="{...}" />
-            <marker date="1557598103183" expanded="true" signature="1493:1593" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <marker date="1557598277162" expanded="true" signature="6:49" ph="..." />
-            <marker date="1557598277162" expanded="true" signature="68:1984" ph="{...}" />
-            <marker date="1557598277162" expanded="true" signature="146:1742" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="370:422" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="467:516" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="565:1196" ph="{...}" />
-            <marker date="1557598277162" expanded="true" signature="602:1177" ph="{...}" />
-            <marker date="1557598277162" expanded="true" signature="693:781" ph="{...}" />
-            <marker date="1557598277162" expanded="true" signature="923:1014" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="1237:1317" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="1369:1449" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="1487:1534" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="1574:1643" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="1683:1736" ph="{...}" />
-            <marker date="1557598277162" expanded="false" signature="1792:1982" ph="{...}" />
-            <marker date="1557598277162" expanded="true" signature="1835:1906" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -423,18 +358,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F5F8D912-CD82-4E63-93D1-35A9356AD96C/74/8809ab81/Enumerable.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="1590" column="39" selection-start-line="1590" selection-start-column="39" selection-end-line="1590" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program/sensors/Sensor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+          <folding>
+            <marker date="1557888157098" expanded="false" signature="6:86" ph="..." />
+            <marker date="1557888157098" expanded="true" signature="105:1674" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="163:1392" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="270:529" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="322:519" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="612:668" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="732:815" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="851:919" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="950:1036" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="1100:1296" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="1195:1250" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="1315:1386" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="1446:1672" ph="{...}" />
+            <marker date="1557888157098" expanded="true" signature="1493:1593" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program/interfaces/ITemperature.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <marker date="1557888157082" expanded="true" signature="17:198" ph="{...}" />
+            <marker date="1557888157082" expanded="true" signature="53:196" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program/sensors/TemperatureSensor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="23" column="63" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
+          <folding>
+            <marker date="1557890397892" expanded="false" signature="6:49" ph="..." />
+            <marker date="1557890397892" expanded="true" signature="68:2279" ph="{...}" />
+            <marker date="1557890397892" expanded="true" signature="146:2037" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="370:422" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="467:516" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="589:678" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="727:1358" ph="{...}" />
+            <marker date="1557890397892" expanded="true" signature="764:1339" ph="{...}" />
+            <marker date="1557890397892" expanded="true" signature="855:943" ph="{...}" />
+            <marker date="1557890397892" expanded="true" signature="1085:1176" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="1399:1479" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="1531:1611" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="1649:1696" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="1736:1805" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="1845:1898" ph="{...}" />
+            <marker date="1557890397892" expanded="false" signature="1941:2031" ph="{...}" />
+            <marker date="1557890397892" expanded="true" signature="2087:2277" ph="{...}" />
+            <marker date="1557890397892" expanded="true" signature="2130:2201" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program/WeatherStation.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <marker date="1557906867944" expanded="false" signature="6:121" ph="..." />
+            <marker date="1557906867944" expanded="true" signature="140:1685" ph="{...}" />
+            <marker date="1557906867944" expanded="true" signature="317:1683" ph="{...}" />
+            <marker date="1557906867944" expanded="true" signature="533:587" ph="{...}" />
+            <marker date="1557906867944" expanded="false" signature="628:1235" ph="{...}" />
+            <marker date="1557906867944" expanded="true" signature="786:1177" ph="{...}" />
+            <marker date="1557906867944" expanded="true" signature="844:1146" ph="{...}" />
+            <marker date="1557906867944" expanded="true" signature="1309:1443" ph="{...}" />
+            <marker date="1557906867944" expanded="true" signature="1549:1677" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Program/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="329">
+          <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
           <folding>
-            <marker date="1557604552792" expanded="true" signature="6:95" ph="..." />
-            <marker date="1557604552792" expanded="true" signature="115:2204" ph="{...}" />
-            <marker date="1557604552792" expanded="true" signature="144:2202" ph="{...}" />
-            <marker date="1557604552792" expanded="true" signature="206:1360" ph="{...}" />
-            <marker date="1557604552792" expanded="true" signature="967:1349" ph="/* var serializer = new DataContractSerializer(station.GetType()); ... */" />
-            <marker date="1557604552792" expanded="true" signature="1428:2196" ph="{...}" />
-            <marker date="1557604552792" expanded="true" signature="2118:2186" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="6:126" ph="..." />
+            <marker date="1557906867937" expanded="true" signature="146:3642" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="175:3640" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="329:1406" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="352:391" ph="/* TODO: Add descriptions ... */" />
+            <marker date="1557906867937" expanded="true" signature="672:754" ph="{...}" />
+            <marker date="1557906867937" expanded="false" signature="1466:1663" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="1739:1925" ph="{...}" />
+            <marker date="1557906867937" expanded="false" signature="1971:2784" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="2829:3634" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="3569:3624" ph="{...}" />
+            <marker date="1557906867937" expanded="true" signature="3674:4059" ph="/* var serializer = new DataContractSerializer(station.GetType()); ... */" />
           </folding>
         </state>
       </provider>

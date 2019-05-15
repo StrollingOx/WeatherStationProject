@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -17,12 +18,10 @@ namespace Program
         
         
         public WeatherStation(){}
-        
         public void AddSensor(Sensor sensor)
         {
             _sensors.Add(sensor);
         }
-
         public void GetAllTemperatures()
         {
             StringBuilder result = new StringBuilder("WeatcherStation -> Temperature sensors :\n");
@@ -39,6 +38,15 @@ namespace Program
             }
             
             Console.Write(result);
+        }
+        public List<ITemperature> searchSensorsByTemperature(double temp)
+        {
+            return _sensors.OfType<ITemperature>().Where(_sensors => _sensors.GetTemperature() >= temp).ToList();
+        }
+        public IEnumerable<Type> searchSensors(Type type, Func<Type, bool> condition, double temperature)
+        {
+            var selectedItems = _sensors.OfType<Type>().Where(condition);
+            return selectedItems;
         }
     }
 }

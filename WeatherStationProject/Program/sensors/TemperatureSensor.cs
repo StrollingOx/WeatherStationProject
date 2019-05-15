@@ -21,6 +21,12 @@ namespace Program
             SetScale(scale);
         }
         
+        public TemperatureSensor(int scale, double temperature)
+        {
+            SetScale(scale);
+            _temperature = temperature;
+        }
+        
         public void SetScale(int scale)
         {
             switch (scale)
