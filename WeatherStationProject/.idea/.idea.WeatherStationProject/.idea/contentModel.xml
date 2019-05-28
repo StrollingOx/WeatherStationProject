@@ -12,6 +12,7 @@
           <e p="IPressure.cs" t="Include" />
           <e p="ITemperature.cs" t="Include" />
         </e>
+        <e p="Measurement.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />

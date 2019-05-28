@@ -14,23 +14,37 @@ namespace Program
         private enum SensorType {TemperatureSensor, HumiditySensor, PressureSensor, Sensor}
         private enum DegreeScale {Celsius, Fahrenheit}
         private static WeatherStation _station;
+        private static Measurement _measurement;
         private static System.Timers.Timer _timer;
 
         public static void Main(string[] args)
         {
-            //*** Creating and populating WeatherStation ***//
+            /*** Creating and populating WeatherStation ***/
             _station = new WeatherStation();
             PopulateStation();
             
-            //*** Extracting the list of sensors that meet the given condition ***//
+            /*** Extracting the list of sensors that meet the given condition ***/
             List<Sensor> sensorsWithTemperatureHigherThanZeroDegrees = 
                 _station.SearchAllSensors(
                     (int) SensorType.TemperatureSensor,
                     s => ((TemperatureSensor) s).GetTemperature() >= 0.0);
-            
+            //Printing the data...
             foreach (var sensor in sensorsWithTemperatureHigherThanZeroDegrees) Console.WriteLine(sensor.ToString());
             
-            //*** Generating reports ***//
+            /*** Measurement class test***/
+            _measurement = new Measurement();
+            _measurement.AddRecord("key1", new Sensor("testSensor1"));
+            _measurement.AddRecord("key2", new PressureSensor());
+            _measurement.AddRecord("key3", new TemperatureSensor((int)DegreeScale.Celsius, 90));
+
+            Sensor sensorFromDictionary = _measurement.GetRecord("key2");
+            Console.WriteLine("DICTIONARY_TEST: "+sensorFromDictionary.ToString());
+            
+            sensorFromDictionary = _measurement.GetRecord("key3");
+            Console.WriteLine("DICTIONARY_TEST: "+sensorFromDictionary.ToString());
+           
+            
+            /*** Generating reports ***/
             SetTimer(60);
             EnableTimer(false);
             Console.WriteLine("\nPress the Enter key to exit the application...\n");
