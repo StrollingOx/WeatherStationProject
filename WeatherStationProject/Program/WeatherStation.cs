@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -39,14 +41,38 @@ namespace Program
             
             Console.Write(result);
         }
-        public List<ITemperature> searchSensorsByTemperature(double temp)
+        public List<Sensor> SearchAllSensors(int sensorType, Func<Sensor , bool> condition)
         {
-            return _sensors.OfType<ITemperature>().Where(_sensors => _sensors.GetTemperature() >= temp).ToList();
-        }
-        public IEnumerable<Type> searchSensors(Type type, Func<Type, bool> condition, double temperature)
-        {
-            var selectedItems = _sensors.OfType<Type>().Where(condition);
-            return selectedItems;
+            //TODO: Optimize
+            List<Sensor> tSensors = new List<Sensor>();
+            List<Sensor> hSensors = new List<Sensor>();
+            List<Sensor> pSensors = new List<Sensor>();
+
+            foreach (var sensor in _sensors)
+            {
+                if (sensor is TemperatureSensor)
+                {
+                    tSensors.Add(sensor);
+                }
+
+                if (sensor is HumiditySensor)
+                {
+                    hSensors.Add(sensor);
+                }
+
+                if (sensor is PressureSensor)
+                {
+                    pSensors.Add(sensor);
+                }
+            }
+            
+            switch(sensorType)
+            {
+                case 0: return tSensors.Where(condition).ToList();
+                case 1: return hSensors.Where(condition).ToList();
+                case 2: return pSensors.Where(condition).ToList();
+                default: return _sensors.Where(condition).ToList();
+            }
         }
     }
 }

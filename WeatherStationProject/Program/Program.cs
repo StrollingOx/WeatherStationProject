@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Timers;
 
@@ -9,32 +11,28 @@ namespace Program
 {
     internal class Program
     {
-
+        private enum SensorType {TemperatureSensor, HumiditySensor, PressureSensor, Sensor}
+        private enum DegreeScale {Celsius, Fahrenheit}
         private static WeatherStation _station;
         private static System.Timers.Timer _timer;
 
         public static void Main(string[] args)
         {
-            //TODO: Add descriptions 
-//           
+            //*** Creating and populating WeatherStation ***//
             _station = new WeatherStation();
             PopulateStation();
             
+            //*** Extracting the list of sensors that meet the given condition ***//
+            List<Sensor> sensorsWithTemperatureHigherThanZeroDegrees = 
+                _station.SearchAllSensors(
+                    (int) SensorType.TemperatureSensor,
+                    s => ((TemperatureSensor) s).GetTemperature() >= 0.0);
             
+            foreach (var sensor in sensorsWithTemperatureHigherThanZeroDegrees) Console.WriteLine(sensor.ToString());
             
-            List<ITemperature> sensorsWithHighTemperature = _station.searchSensorsByTemperature(50.0);
-            foreach (var sensor in sensorsWithHighTemperature)
-            {
-                Console.WriteLine(sensor.ToString());
-            }
-            
-            //TODO: Finish searchSensors method
-            IEnumerable<ITemperature> sensorsWithModerateTemperature =
-                _station.searchSensors(ITemperature, _sensors => _sensors.GetTemperature() >= temp);
-            
-            
-            
+            //*** Generating reports ***//
             SetTimer(60);
+            EnableTimer(false);
             Console.WriteLine("\nPress the Enter key to exit the application...\n");
             Console.WriteLine("The application started at {0:HH:mm:ss.fff}", DateTime.Now);
             Console.ReadLine();
@@ -50,9 +48,15 @@ namespace Program
             _timer = new System.Timers.Timer(interval*1000);
             _timer.Elapsed += OnTimedEvent;
             _timer.AutoReset = true;
-            _timer.Enabled = true;
+            _timer.Enabled = false;
         }
-        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+
+        private static void EnableTimer(bool online)
+        {
+            _timer.Enabled = online;
+        }
+        
+        private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Console.WriteLine("Generating Report...");
             GenerateReport();
@@ -65,10 +69,10 @@ namespace Program
             sensor2.Name = "OOF sensor";
             Sensor sensor3 = new HumiditySensor();
             Sensor sensor4 = new TemperatureSensor();
-            (sensor4 as TemperatureSensor).SetScale(1);
-            Sensor sensor5 = new TemperatureSensor(0, 100);
-            Sensor sensor6 = new TemperatureSensor(0, 80);
-            Sensor sensor7 = new TemperatureSensor(0, -3);
+            (sensor4 as TemperatureSensor).SetScale((int)DegreeScale.Fahrenheit);
+            Sensor sensor5 = new TemperatureSensor((int)DegreeScale.Celsius, 100);
+            Sensor sensor6 = new TemperatureSensor((int)DegreeScale.Celsius, 80);
+            Sensor sensor7 = new TemperatureSensor((int)DegreeScale.Celsius, -3);
             
             _station.AddSensor(sensor1);
             _station.AddSensor(sensor2);

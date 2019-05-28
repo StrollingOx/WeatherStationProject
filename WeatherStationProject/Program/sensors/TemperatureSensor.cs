@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Program
 {
+    enum DegreeScale {Celsius, Fahrenheit}
     [DataContract]
     public class TemperatureSensor: Sensor, ITemperature
     {
@@ -31,14 +32,14 @@ namespace Program
         {
             switch (scale)
             {
-                case 0:
+                case (int)DegreeScale.Celsius:
                     if (_scale.Equals("Fahrenheit"))
                     {
                         ConvertToCelsius();
                     }
                     _scale = "Celsius";
                     break;
-                case 1: 
+                case (int)DegreeScale.Fahrenheit: 
                     if (_scale.Equals("Celsius"))
                     {
                         ConvertToFahrenheit();

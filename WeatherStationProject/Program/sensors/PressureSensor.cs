@@ -12,5 +12,10 @@ namespace Program
         {
             return _pressure;
         }
+        
+        public override string ToString()
+        {
+            return Name + ": " + GetPressure() + "Pa";
+        }
     }
 }

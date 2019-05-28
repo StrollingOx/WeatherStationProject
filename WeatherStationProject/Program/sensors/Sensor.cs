@@ -67,6 +67,11 @@ namespace Program
             Dispose(false);
             _number--;
         }
+        
+        public override string ToString()
+        {
+            return Name + ": ONLINE.";
+        }
     }
 
     public class NameOutOfScopeException : Exception

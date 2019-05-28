@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\zai-2\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\zai-2\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_WeatherStationProject.907364767.00" t="ExcludeRecursive" />
-    <e p="C:\Users\zai-2\Desktop\WeatherStationProject\WeatherStationProject" t="IncludeFlat">
+    <e p="C:\Users\Anon\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Anon\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_WeatherStationProject.-124416554.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Anon\Desktop\Projects\C#\WeatherStationProject\WeatherStationProject" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

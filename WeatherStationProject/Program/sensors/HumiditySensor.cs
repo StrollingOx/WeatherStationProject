@@ -12,5 +12,10 @@ namespace Program
         {
             return _humidity;
         }
+        
+        public override string ToString()
+        {
+            return Name + ": " + GetHumidity() + "%";
+        }
     }
 }
