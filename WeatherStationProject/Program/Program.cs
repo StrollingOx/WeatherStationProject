@@ -33,15 +33,18 @@ namespace Program
             
             /*** Measurement class test***/
             _measurement = new Measurement();
-            _measurement.AddRecord("key1", new Sensor("testSensor1"));
-            _measurement.AddRecord("key2", new PressureSensor());
-            _measurement.AddRecord("key3", new TemperatureSensor((int)DegreeScale.Celsius, 90));
+            _measurement.AddRecord(new Sensor("testSensor1"), 0.0);                     //'Sensor8'
+            _measurement.AddRecord(new PressureSensor());                                            //'Sensor9'
+            _measurement.AddRecord(new TemperatureSensor((int)DegreeScale.Celsius, 90));  //'Sensor10'
 
-            Sensor sensorFromDictionary = _measurement.GetRecord("key2");
-            Console.WriteLine("DICTIONARY_TEST: "+sensorFromDictionary.ToString());
+            Double sensorMeasurement = _measurement.GetRecord("Sensor9");
+            Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
+
+            sensorMeasurement = _measurement.GetRecord("testSensor1");
+            Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
             
-            sensorFromDictionary = _measurement.GetRecord("key3");
-            Console.WriteLine("DICTIONARY_TEST: "+sensorFromDictionary.ToString());
+            sensorMeasurement = _measurement.GetRecord("Sensor10");
+            Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
            
             
             /*** Generating reports ***/

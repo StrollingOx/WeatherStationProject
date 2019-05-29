@@ -44,25 +44,23 @@ namespace Program
         public List<Sensor> SearchAllSensors(int sensorType, Func<Sensor , bool> condition)
         {
             //TODO: Optimize
-            List<Sensor> tSensors = new List<Sensor>();
-            List<Sensor> hSensors = new List<Sensor>();
-            List<Sensor> pSensors = new List<Sensor>();
+            var tSensors = new List<Sensor>();
+            var hSensors = new List<Sensor>();
+            var pSensors = new List<Sensor>();
 
             foreach (var sensor in _sensors)
             {
-                if (sensor is TemperatureSensor)
+                switch (sensor)
                 {
-                    tSensors.Add(sensor);
-                }
-
-                if (sensor is HumiditySensor)
-                {
-                    hSensors.Add(sensor);
-                }
-
-                if (sensor is PressureSensor)
-                {
-                    pSensors.Add(sensor);
+                    case TemperatureSensor _:
+                        tSensors.Add(sensor);
+                        break;
+                    case HumiditySensor _:
+                        hSensors.Add(sensor);
+                        break;
+                    case PressureSensor _:
+                        pSensors.Add(sensor);
+                        break;
                 }
             }
             
