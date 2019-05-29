@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Json;
@@ -16,7 +17,7 @@ namespace Program
         private static WeatherStation _station;
         private static Measurement _measurement;
         private static System.Timers.Timer _timer;
-
+        
         public static void Main(string[] args)
         {
             /*** Creating and populating WeatherStation ***/
@@ -33,9 +34,9 @@ namespace Program
             
             /*** Measurement class test***/
             _measurement = new Measurement();
-            _measurement.AddRecord(new Sensor("testSensor1"), 0.0);                     //'Sensor8'
-            _measurement.AddRecord(new PressureSensor());                                            //'Sensor9'
-            _measurement.AddRecord(new TemperatureSensor((int)DegreeScale.Celsius, 90));  //'Sensor10'
+            _measurement.AddRecord(new Sensor("testSensor1"), 0.0);                     //Sensor8
+            _measurement.AddRecord(new PressureSensor());                                            //Sensor9
+            _measurement.AddRecord(new TemperatureSensor((int)DegreeScale.Celsius, 90));  //Sensor10
 
             Double sensorMeasurement = _measurement.GetRecord("Sensor9");
             Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
@@ -46,6 +47,10 @@ namespace Program
             sensorMeasurement = _measurement.GetRecord("Sensor10");
             Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
            
+            /*** Event test ***/
+            Sensor eventSensor = new Sensor(); //Sensor11
+            eventSensor.AddMeasure();
+            eventSensor.Changed += new ChangedEventHandler(SensorChanged);
             
             /*** Generating reports ***/
             SetTimer(60);
@@ -120,6 +125,16 @@ namespace Program
             {
                 file.Write(jsonString);
             }
+        }
+
+        private void SensorChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("PING!!!");
+        }
+
+        public void Detach(Sensor sensor)
+        {
+            sensor.Changed -= new ChangedEventHandler(SensorChanged);
         }
     }
 }

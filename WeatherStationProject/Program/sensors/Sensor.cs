@@ -1,12 +1,16 @@
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Runtime.Serialization;
 using System.Security.AccessControl;
 
 namespace Program
 {
+    public delegate void ChangedEventHandler(object sender, EventArgs e);
     [DataContract]
     public class Sensor :IDisposable
     {
+        public event ChangedEventHandler Changed;
+        private Measurement _measurement;
         private string _name;
 
         [DataMember(Name="Sensor's Name")]
@@ -35,6 +39,7 @@ namespace Program
         {
             _number++;
             _name = "Sensor" + _number;
+            _measurement = new Measurement();
         }
 
         public Sensor(string name)
@@ -57,6 +62,9 @@ namespace Program
             if (disposing)
             {
                 _number--;
+                _measurement = null; 
+                Changed = null;
+                /* Is thise enoguh? */
             }
       
             disposed = true;
@@ -71,6 +79,18 @@ namespace Program
         public override string ToString()
         {
             return Name + ": ONLINE.";
+        }
+
+        protected virtual void OnChanged(EventArgs e)
+        {
+            if (Changed != null)
+                Changed(this, e);
+        }
+
+        public void AddMeasure()
+        {
+            _measurement.AddRecord(this, 111.11);
+            OnChanged(EventArgs.Empty);
         }
     }
 
