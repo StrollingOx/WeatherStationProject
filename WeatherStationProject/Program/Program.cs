@@ -25,6 +25,7 @@ namespace Program
             PopulateStation();
             
             /*** Extracting the list of sensors that meet the given condition ***/
+            Console.WriteLine("SearchAllSensors(..., s => ((TemperatureSensor) s).GetTemperature() >= 0.0) method test");
             List<Sensor> sensorsWithTemperatureHigherThanZeroDegrees = 
                 _station.SearchAllSensors(
                     (int) SensorType.TemperatureSensor,
@@ -33,24 +34,28 @@ namespace Program
             foreach (var sensor in sensorsWithTemperatureHigherThanZeroDegrees) Console.WriteLine(sensor.ToString());
             
             /*** Measurement class test***/
+            Console.WriteLine("\nMeasurement class test");
             _measurement = new Measurement();
             _measurement.AddRecord(new Sensor("testSensor1"), 0.0);                     //Sensor8
-            _measurement.AddRecord(new PressureSensor());                                            //Sensor9
+            _measurement.AddRecord(new PressureSensor(), 100.0);                               //Sensor9
             _measurement.AddRecord(new TemperatureSensor((int)DegreeScale.Celsius, 90));  //Sensor10
 
-            Double sensorMeasurement = _measurement.GetRecord("Sensor9");
-            Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
+            Double sensorMeasurement = _measurement.GetRecord("Sensor9_measure_2");
+            Console.WriteLine("DICTIONARY_TEST(Sensor9): "+sensorMeasurement);
 
-            sensorMeasurement = _measurement.GetRecord("testSensor1");
-            Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
+            sensorMeasurement = _measurement.GetRecord("testSensor1_measure_1");
+            Console.WriteLine("DICTIONARY_TEST(testSensor1): "+sensorMeasurement);
             
-            sensorMeasurement = _measurement.GetRecord("Sensor10");
-            Console.WriteLine("DICTIONARY_TEST: "+sensorMeasurement);
+            sensorMeasurement = _measurement.GetRecord("Sensor10", 3);
+            Console.WriteLine("DICTIONARY_TEST(Sensor10): "+sensorMeasurement);
            
             /*** Event test ***/
+            Console.WriteLine("\nSensors event test");
             Sensor eventSensor = new Sensor(); //Sensor11
-            eventSensor.AddMeasure();
-            eventSensor.Changed += new ChangedEventHandler(SensorChanged);
+            
+            
+            
+            
             
             /*** Generating reports ***/
             SetTimer(60);
@@ -125,16 +130,6 @@ namespace Program
             {
                 file.Write(jsonString);
             }
-        }
-
-        private void SensorChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("PING!!!");
-        }
-
-        public void Detach(Sensor sensor)
-        {
-            sensor.Changed -= new ChangedEventHandler(SensorChanged);
         }
     }
 }

@@ -5,14 +5,11 @@ using System.Security.AccessControl;
 
 namespace Program
 {
-    public delegate void ChangedEventHandler(object sender, EventArgs e);
     [DataContract]
-    public class Sensor :IDisposable
+    public class Sensor :EventArgs, IDisposable
     {
-        public event ChangedEventHandler Changed;
         private Measurement _measurement;
         private string _name;
-
         [DataMember(Name="Sensor's Name")]
         public string Name
         {
@@ -26,9 +23,7 @@ namespace Program
                 
             }
         }
-        
         private static int _number = 0;
-
         public static int Number
         {
             get { return _number; }
@@ -63,8 +58,6 @@ namespace Program
             {
                 _number--;
                 _measurement = null; 
-                Changed = null;
-                /* Is thise enoguh? */
             }
       
             disposed = true;
@@ -81,16 +74,9 @@ namespace Program
             return Name + ": ONLINE.";
         }
 
-        protected virtual void OnChanged(EventArgs e)
+        public Measurement GetMeasurements()
         {
-            if (Changed != null)
-                Changed(this, e);
-        }
-
-        public void AddMeasure()
-        {
-            _measurement.AddRecord(this, 111.11);
-            OnChanged(EventArgs.Empty);
+            return _measurement;
         }
     }
 

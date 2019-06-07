@@ -13,13 +13,17 @@ namespace Program
     [KnownType(typeof(PressureSensor))]
     [KnownType(typeof(HumiditySensor))]
 
+
     public class WeatherStation
     {
-        [DataMember(Name="List of sensor")]
-        private readonly List<Sensor> _sensors = new List<Sensor>();
+        [DataMember(Name = "List of sensor")] 
+        private readonly List<Sensor> _sensors;
         
-        
-        public WeatherStation(){}
+
+        public WeatherStation()
+        {
+            _sensors = new List<Sensor>();
+        }
         public void AddSensor(Sensor sensor)
         {
             _sensors.Add(sensor);

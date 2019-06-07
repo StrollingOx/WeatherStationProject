@@ -6,15 +6,18 @@ namespace Program
 {
     public class Measurement
     {
-        private readonly Dictionary<string, double> _openWith = new Dictionary<string, double>();
+        private readonly Dictionary<string, double> _openWith;
+        private int counter;
 
         public Measurement()
         {
+            _openWith = new Dictionary<string, double>();
+            counter = 0;
         }
 
         public void AddRecord(Sensor sensor)
         {
-            String key = sensor.Name;
+            String key = sensor.Name + "_measure_" + ++counter;
             double value;
             if (sensor is TemperatureSensor)
             {
@@ -38,12 +41,17 @@ namespace Program
         
         public void AddRecord(Sensor sensor, double value)
         {
-            _openWith.Add(sensor.Name, value);
+            _openWith.Add(sensor.Name+ "_measure_" + ++counter, value);
         }
 
         public double GetRecord(string record)
         {
             return _openWith.TryGetValue(record, out var value) ? value : -1.0;
+        }
+        
+        public double GetRecord(string record, int index)
+        {
+            return _openWith.TryGetValue(record+"_measure_"+index, out var value) ? value : -1.0;
         }
     }
 
