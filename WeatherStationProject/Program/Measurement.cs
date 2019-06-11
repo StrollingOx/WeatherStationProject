@@ -4,20 +4,22 @@ using System.Text;
 
 namespace Program
 {
-    public class Measurement
+    public class Measurement: EventArgs
     {
         private readonly Dictionary<string, double> _openWith;
-        private int counter;
+        private int _counter;
+
+        public int  Counter => _counter;
 
         public Measurement()
         {
             _openWith = new Dictionary<string, double>();
-            counter = 0;
+            _counter = 0;
         }
 
         public void AddRecord(Sensor sensor)
         {
-            String key = sensor.Name + "_measure_" + ++counter;
+            String key = sensor.Name + "_measure_" + ++_counter;
             double value;
             if (sensor is TemperatureSensor)
             {
@@ -41,7 +43,7 @@ namespace Program
         
         public void AddRecord(Sensor sensor, double value)
         {
-            _openWith.Add(sensor.Name+ "_measure_" + ++counter, value);
+            _openWith.Add(sensor.Name+ "_measure_" + ++_counter, value);
         }
 
         public double GetRecord(string record)
@@ -53,6 +55,7 @@ namespace Program
         {
             return _openWith.TryGetValue(record+"_measure_"+index, out var value) ? value : -1.0;
         }
+        
     }
 
     public class UnmeasurableSensor : Exception

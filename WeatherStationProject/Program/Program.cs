@@ -12,8 +12,6 @@ namespace Program
 {
     internal class Program
     {
-        private enum SensorType {TemperatureSensor, HumiditySensor, PressureSensor, Sensor}
-        private enum DegreeScale {Celsius, Fahrenheit}
         private static WeatherStation _station;
         private static Measurement _measurement;
         private static System.Timers.Timer _timer;
@@ -51,7 +49,10 @@ namespace Program
            
             /*** Event test ***/
             Console.WriteLine("\nSensors event test");
-            Sensor eventSensor = new Sensor(); //Sensor11
+            Sensor eventSensor = new HumiditySensor(); //Sensor11
+            ((HumiditySensor)eventSensor).SetHumidity(38.52);
+            eventSensor.MeasurementRegistered += _station.OnMeasurementRegistered;
+            eventSensor.RegisterCurrentMeasure();
             
             
             

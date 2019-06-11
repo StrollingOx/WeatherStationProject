@@ -12,6 +12,11 @@ namespace Program
         {
             return _humidity;
         }
+
+        public void SetHumidity(double humidityValue)
+        {
+            _humidity = humidityValue;
+        }
         
         public override string ToString()
         {

@@ -8,7 +8,11 @@ namespace Program
     [DataContract]
     public class Sensor :EventArgs, IDisposable
     {
+        public delegate void RegisterMeasurementEventHandler(object o, Measurement e);
+
+        public event RegisterMeasurementEventHandler MeasurementRegistered;
         private Measurement _measurement;
+        public Measurement Measurement => _measurement;
         private string _name;
         [DataMember(Name="Sensor's Name")]
         public string Name
@@ -74,9 +78,17 @@ namespace Program
             return Name + ": ONLINE.";
         }
 
-        public Measurement GetMeasurements()
+        //EVENTS & MEASUREMENTS--------------------------------------
+
+        public void RegisterCurrentMeasure()
         {
-            return _measurement;
+            _measurement.AddRecord(this);
+            OnMeasurementRegistered(_measurement);
+        }
+        
+        protected virtual void OnMeasurementRegistered(Measurement measurement)
+        {
+            MeasurementRegistered?.Invoke(this, measurement );
         }
     }
 

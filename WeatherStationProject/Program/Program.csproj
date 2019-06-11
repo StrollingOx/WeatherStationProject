@@ -44,6 +44,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="enums\DegreeScale.cs" />
+    <Compile Include="enums\SensorType.cs" />
     <Compile Include="interfaces\IHumidity.cs" />
     <Compile Include="interfaces\IPressure.cs" />
     <Compile Include="interfaces\ITemperature.cs" />

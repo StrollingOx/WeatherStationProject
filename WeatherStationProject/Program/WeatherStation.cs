@@ -16,6 +16,7 @@ namespace Program
 
     public class WeatherStation
     {
+        
         [DataMember(Name = "List of sensor")] 
         private readonly List<Sensor> _sensors;
         
@@ -45,6 +46,7 @@ namespace Program
             
             Console.Write(result);
         }
+        
         public List<Sensor> SearchAllSensors(int sensorType, Func<Sensor , bool> condition)
         {
             //TODO: Optimize
@@ -74,6 +76,18 @@ namespace Program
                 case 1: return hSensors.Where(condition).ToList();
                 case 2: return pSensors.Where(condition).ToList();
                 default: return _sensors.Where(condition).ToList();
+            }
+        }
+
+        public void OnMeasurementRegistered(object o, Measurement e)
+        {
+            Console.WriteLine("Object " + (o as Sensor)?.Name + " just registered new measure.");
+            for (var i = 0; i < e.Counter; i++)
+            {
+                var key = (o as Sensor)?.Name + "_measure_" + (i + 1);
+                var value = e.GetRecord((o as Sensor)?.Name + "_measure_" + (i + 1));
+                
+                Console.WriteLine( key + ": " + value);
             }
         }
     }

@@ -3,7 +3,6 @@ using System.Runtime.Serialization;
 
 namespace Program
 {
-    enum DegreeScale {Celsius, Fahrenheit}
     [DataContract]
     public class TemperatureSensor: Sensor, ITemperature
     {
