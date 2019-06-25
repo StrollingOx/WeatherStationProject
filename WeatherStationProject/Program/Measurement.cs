@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Program
 {
+    [DataContract]
     public class Measurement: EventArgs
     {
+        
         private readonly Dictionary<string, double> _openWith;
+        [DataMember(Name="Measurements")]
+        public Dictionary<string, double> OpenWith => _openWith;
         private int _counter;
-
+        [DataMember(Name="Counter")]
         public int  Counter => _counter;
 
         public Measurement()

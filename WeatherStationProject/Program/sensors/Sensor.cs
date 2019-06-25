@@ -1,7 +1,11 @@
 using System;
 using System.Diagnostics.Eventing.Reader;
+using System.Net;
+using System.Net.Sockets;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters;
 using System.Security.AccessControl;
+using System.Text;
 
 namespace Program
 {
@@ -12,6 +16,7 @@ namespace Program
 
         public event RegisterMeasurementEventHandler MeasurementRegistered;
         private Measurement _measurement;
+        
         public Measurement Measurement => _measurement;
         private string _name;
         [DataMember(Name="Sensor's Name")]
@@ -45,6 +50,7 @@ namespace Program
         {
             _number++;
             Name = name;
+            _measurement = new Measurement();
         }
 
         public void Dispose()
@@ -86,9 +92,42 @@ namespace Program
             OnMeasurementRegistered(_measurement);
         }
         
+        public void RegisterCurrentMeasure(double value)
+        {
+            _measurement.AddRecord(this, value);
+        }
+        
         protected virtual void OnMeasurementRegistered(Measurement measurement)
         {
             MeasurementRegistered?.Invoke(this, measurement );
+        }
+
+        public void SendDataToServer()
+        {
+            try 
+            {
+            Int32 port = 9759;
+            TcpClient client = new TcpClient("127.0.0.1", port);
+
+            String message = _name+"-"
+                                  +_name+"_measure_1-"
+                                  +_measurement.GetRecord(_name, 1);
+            
+            Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); 
+            NetworkStream stream = client.GetStream();
+            stream.Write(data, 0, data.Length);
+            
+            stream.Close();         
+            client.Close(); 
+            } 
+            catch (ArgumentNullException e) 
+            {
+                Console.WriteLine("ArgumentNullException: {0}", e);
+            } 
+            catch (SocketException e) 
+            {
+                Console.WriteLine("SocketException: {0}", e);
+            }
         }
     }
 
@@ -100,4 +139,5 @@ namespace Program
         }
         public NameOutOfScopeException(string message) : base(message){}
     }
+    
 }

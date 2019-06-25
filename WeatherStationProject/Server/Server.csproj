@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9E69F0C-CE0E-4C9B-937F-E125FAF42E05}</ProjectGuid>
+    <ProjectGuid>{0642DBA3-3EC3-437D-99D1-B9FD979C29B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Program</RootNamespace>
-    <AssemblyName>Program</AssemblyName>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,31 +34,23 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enums\DegreeScale.cs" />
-    <Compile Include="enums\SensorType.cs" />
-    <Compile Include="interfaces\IHumidity.cs" />
-    <Compile Include="interfaces\IPressure.cs" />
-    <Compile Include="interfaces\ITemperature.cs" />
-    <Compile Include="Measurement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sensors\HumiditySensor.cs" />
-    <Compile Include="sensors\PressureSensor.cs" />
-    <Compile Include="sensors\Sensor.cs" />
-    <Compile Include="sensors\TemperatureSensor.cs" />
+    <Compile Include="WeatherStation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Program\Program.csproj">
+      <Project>{b9e69f0c-ce0e-4c9b-937f-e125faf42e05}</Project>
+      <Name>Program</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
