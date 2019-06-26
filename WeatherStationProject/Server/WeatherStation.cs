@@ -56,11 +56,13 @@ namespace Program
             var client = (TcpClient)o;
             var bytes = new byte[256];
             var stream = client.GetStream();
+            string sensorData = "";
             
             int i;
             while((i = stream.Read(bytes, 0, bytes.Length))!=0) 
             {   
-                var sensorData = Encoding.ASCII.GetString(bytes, 0, i);
+                sensorData += Encoding.ASCII.GetString(bytes, 0, i);
+            }
                 Console.WriteLine("Received: {0}", sensorData);
                 var data = sensorData.Split('-');
                 int type = Convert.ToInt32(data[3]);
@@ -96,7 +98,7 @@ namespace Program
                 }
 
 
-            }
+            
             stream.Close();
             client.Close();
         }
