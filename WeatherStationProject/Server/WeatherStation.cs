@@ -71,6 +71,7 @@ namespace Program
                     sensor = new TemperatureSensor();
                     (sensor as Sensor).Name = data[0];
                     ((TemperatureSensor) sensor).SetTemperature(Convert.ToDouble(data[2]));
+                    _sensors.Add(sensor);
                 }
                 else if (type == (int) SensorType.HumiditySensor)
                 {
@@ -78,12 +79,14 @@ namespace Program
                     sensor = new HumiditySensor();
                     (sensor as Sensor).Name = data[0];
                     ((HumiditySensor) sensor).SetHumidity(Convert.ToDouble(data[2]));
+                    _sensors.Add(sensor);
                 }
                 else if (type == (int) SensorType.PressureSensor)
                 {
                     sensor = new PressureSensor();
                     (sensor as Sensor).Name = data[0];
                     ((PressureSensor) sensor).SetPressure(Convert.ToDouble(data[2]));
+                    _sensors.Add(sensor);
                 }
                 else
                 {
