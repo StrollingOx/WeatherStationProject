@@ -63,9 +63,35 @@ namespace Program
                 var sensorData = Encoding.ASCII.GetString(bytes, 0, i);
                 Console.WriteLine("Received: {0}", sensorData);
                 var data = sensorData.Split('-');
-                var sensor = new Sensor(data[0]);
-                sensor.RegisterCurrentMeasure(Convert.ToDouble(data[2]));
-                _sensors.Add(sensor);
+                int type = Convert.ToInt32(data[3]);
+                Sensor sensor;
+                
+                if (type == (int) SensorType.TemperatureSensor)
+                {
+                    sensor = new TemperatureSensor();
+                    (sensor as Sensor).Name = data[0];
+                    ((TemperatureSensor) sensor).SetTemperature(Convert.ToDouble(data[2]));
+                }
+                else if (type == (int) SensorType.HumiditySensor)
+                {
+
+                    sensor = new HumiditySensor();
+                    (sensor as Sensor).Name = data[0];
+                    ((HumiditySensor) sensor).SetHumidity(Convert.ToDouble(data[2]));
+                }
+                else if (type == (int) SensorType.PressureSensor)
+                {
+                    sensor = new PressureSensor();
+                    (sensor as Sensor).Name = data[0];
+                    ((PressureSensor) sensor).SetPressure(Convert.ToDouble(data[2]));
+                }
+                else
+                {
+                    sensor = new Sensor(data[0]);
+                    sensor.RegisterCurrentMeasure(Convert.ToDouble(data[2]));
+                    _sensors.Add(sensor);
+                }
+
 
             }
             stream.Close();

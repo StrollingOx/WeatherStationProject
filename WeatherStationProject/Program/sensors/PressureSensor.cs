@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 
 namespace Program
@@ -12,7 +13,12 @@ namespace Program
         {
             return _pressure;
         }
-        
+
+        public void SetPressure(double value)
+        {
+            _pressure = value;
+        }
+
         public override string ToString()
         {
             return Name + ": " + GetPressure() + "Pa";

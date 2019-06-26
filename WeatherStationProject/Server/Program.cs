@@ -74,7 +74,7 @@ namespace Server
             StreamReader sr = new StreamReader(someRam);
             string jsonString = sr.ReadToEnd();
             
-            var fileName = @"C:\Users\Anon\Desktop\Reports\report"+
+            var fileName = @"C:\Users\zai-2\Desktop\Reports\report"+
                            DateTime.Now.ToString("--dd-MM-yyyyTHHmm")
                            +".json";
             Console.WriteLine(fileName);

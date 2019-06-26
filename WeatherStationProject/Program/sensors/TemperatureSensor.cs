@@ -75,6 +75,11 @@ namespace Program
         {
             return _temperature;
         }
+        
+        public void SetTemperature(double value)
+        {
+            _temperature = value;
+        }
 
         public override string ToString()
         {

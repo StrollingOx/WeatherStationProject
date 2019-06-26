@@ -102,17 +102,40 @@ namespace Program
             MeasurementRegistered?.Invoke(this, measurement );
         }
 
-        public void SendDataToServer()
+        public void SendDataToServer(int type)
         {
-            try 
+            try
             {
-            Int32 port = 9759;
-            TcpClient client = new TcpClient("127.0.0.1", port);
+                Int32 port = 9759;
+                TcpClient client = new TcpClient("127.0.0.1", port);
+                string message = "NotASensor-NotAMeasure-0-1";
+                if (type == (int) SensorType.Sensor)
+                {
+                message = _name + "-"
+                                + _name + "_measure_1-"
+                                + _measurement.GetRecord(_name, 1) + "-"
+                                + type;
+                }
+                else if(type == (int) SensorType.TemperatureSensor)
+                {
+                    message = _name + "-"
+                                    + _name + "_measure_1-"
+                                    + (this as TemperatureSensor).GetTemperature() + "-"
+                                    + type;
+                }else if(type == (int) SensorType.HumiditySensor)
+                {
+                    message = _name + "-"
+                                    + _name + "_measure_1-"
+                                    + (this as HumiditySensor).GetHumidity() + "-"
+                                    + type;
+                }else if(type == (int) SensorType.PressureSensor)
+                {
+                    message = _name + "-"
+                                    + _name + "_measure_1-"
+                                    + (this as PressureSensor).GetPressure() + "-"
+                                    + type;
+                }
 
-            String message = _name+"-"
-                                  +_name+"_measure_1-"
-                                  +_measurement.GetRecord(_name, 1);
-            
             Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); 
             NetworkStream stream = client.GetStream();
             stream.Write(data, 0, data.Length);
